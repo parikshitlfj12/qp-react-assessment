@@ -10,9 +10,9 @@ const TodoList: React.FC = () => {
 
     // Visualize this as getting todo's from the API endpoint with given page number
     useEffect(() => {
-        const todos = getPageTodos(state.page)
-        setTodosList(todos)
-    }, [state.page, state.todos])
+        const todos = getPageTodos(state.page);
+        setTodosList(todos);
+    }, [state.page, state.todos]);
 
 
     const totalPages = Math.ceil(state.totalItems / state.pageSize);
@@ -32,9 +32,13 @@ const TodoList: React.FC = () => {
     return (
         <div>
             <div className="list-container">
-                {todosList.map((todo) => (
-                    <TodoItem key={todo.id} todo={todo} />
-                ))}
+                {!todosList.length ? (
+                    <div className="loader"></div>
+                ) : (
+                    todosList.map((todo) => (
+                        <TodoItem key={todo.id} todo={todo} />
+                    ))
+                )}
             </div>
             <div className="pagination">
                 <button onClick={handlePrevPage} disabled={state.page === 1}>
