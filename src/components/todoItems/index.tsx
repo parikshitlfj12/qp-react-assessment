@@ -1,7 +1,7 @@
-// src/components/TodoItem.tsx
 import React from 'react';
 import { Todo } from '../../types';
 import { useTodos } from '../../context/TodoContext';
+import './todoItems.css';
 
 const TodoItem: React.FC<{ todo: Todo }> = React.memo(({ todo }) => {
     const { dispatch } = useTodos();
@@ -11,13 +11,13 @@ const TodoItem: React.FC<{ todo: Todo }> = React.memo(({ todo }) => {
     };
 
     return (
-        <div>
+        <div className="item-container">
             <input
                 type="checkbox"
                 checked={todo.completed}
                 onChange={toggleTodo}
             />
-            <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+            <span className={`todo-text ${todo.completed ? 'completed' : ''}`}>
                 {todo.text}
             </span>
         </div>
