@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
--   The website can be accessed at - [https://qp-react-assessment-rho.vercel.app/](Vercel Todo App)
+-   The website can be accessed at - [https://qp-react-assessment-rho.vercel.app](Vercel Todo App)
 
 ## Key Features
 -   The app is a simple todo app that is fetching data from a third party dummy API.
